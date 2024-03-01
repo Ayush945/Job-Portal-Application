@@ -12,11 +12,11 @@ function Navbar() {
                 <Link to={'/find-salaries'} className=' hover:text-white'>Salaries</Link>
             </Flex>
             <Flex gap={4}>
-                <Button variant="ghost">Message</Button>
-                <Button variant="ghost">Notification</Button>
-                <Button variant="ghost">Profile</Button>
+                <Button variant="ghost" as={Link} to={'message'}>Message</Button>
+                <Button variant="ghost" as={Link} to={'notification'}>Notification</Button>
+                <Button variant="ghost" as={Link} to={'profile'}>Profile</Button>
             </Flex>
-            <Button variant="outline" borderWidth={3}>Post Job</Button>
+            <Button variant="outline" borderWidth={3} as={Link} to={'post-job'}>Post Job</Button>
         </Box>
     );
 }
