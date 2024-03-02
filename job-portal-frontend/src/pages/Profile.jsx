@@ -1,3 +1,7 @@
+/**
+ * Ayush Thapa
+ * Profile Page
+ */
 import React from 'react'
 
 function Profile() {

@@ -1,3 +1,7 @@
+/**
+ * Ayush Thapa
+ * Find Salaries page
+ */
 import React from 'react'
 
 function FindSalaries() {
