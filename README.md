@@ -2,16 +2,16 @@
 
 #Used Tools:
 
-*Frontend: React, Vite, TailwindCSS, Chakra UI
+* Frontend: React, Vite, TailwindCSS, Chakra UI
 
-*Backend: Spring Boot 
+* Backend: Spring Boot 
 
-*Database: PostgreSQL
+* Database: PostgreSQL
 
-*Design: Figma (wireframe), draw.io(ERD)
+* Design: Figma (wireframe), draw.io(ERD)
 
 #Dependency installed
 
-*Frontend: axis, react-router-dom, react-router
+* Frontend: axis, react-router-dom, react-router
 
-*Backend: lombok, spring security, spring data jpa, spring web, PostgreSQL Driver
+* Backend: lombok, spring security, spring data jpa, spring web, PostgreSQL Driver
