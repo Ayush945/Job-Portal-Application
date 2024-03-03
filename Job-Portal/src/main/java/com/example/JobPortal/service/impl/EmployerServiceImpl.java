@@ -48,12 +48,13 @@ public class EmployerServiceImpl implements EmployerService {
         Employer savedEmployer=employerRepo.findById(employerId)
                 .orElseThrow(()->new RuntimeException("Employer not found"));
         Employer newEmployer=modelMapper.map(employerDTO,Employer.class);
-        if(!newEmployer.getEmployerEmail().isEmpty()){
-            savedEmployer.setEmployerEmail(newEmployer.getEmployerEmail());
+        if(!newEmployer.getEmail().isEmpty()){
+            savedEmployer.setEmail(newEmployer.getEmail());
         }
-        if(!newEmployer.getEmployerName().isEmpty()){
-            savedEmployer.setEmployerName(newEmployer.getEmployerName());
+        if(!newEmployer.getFullName().isEmpty()){
+            savedEmployer.setFullName(newEmployer.getFullName());
         }
+
         employerRepo.save(savedEmployer);
 
         return modelMapper.map(savedEmployer,EmployerDTO.class);

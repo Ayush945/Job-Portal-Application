@@ -8,6 +8,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
+import javax.crypto.spec.SecretKeySpec;
+import java.io.UnsupportedEncodingException;
+import java.nio.charset.StandardCharsets;
+import java.security.SecureRandom;
 import java.util.*;
 import java.util.function.Function;
 @Service
@@ -53,9 +57,23 @@ public class JwtUtil {
     }
 
     private String doGenerateToken(Map<String, Object> claims, String subject) {
+        String secureKey=generateSecureKey(256);
+        byte[] keyBytes= new byte[0];
+        try {
+            keyBytes = secureKey.getBytes("UTF-8");
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException("Problem in generating Token");
+        }
+        SecretKeySpec spec=new SecretKeySpec(keyBytes,"HmacSHA256");
         return Jwts.builder().setClaims(claims).setSubject(subject).setIssuedAt(new Date(System.currentTimeMillis()))
-                .setExpiration(new Date(System.currentTimeMillis() + expiry)).signWith(SignatureAlgorithm.HS512, secret)
+                .setExpiration(new Date(System.currentTimeMillis() + expiry)).signWith(SignatureAlgorithm.HS256, keyBytes)
                 .compact();
+    }
+    private String generateSecureKey(int keyLength){
+        SecureRandom random=new SecureRandom();
+        byte[] keyBytes=new byte[keyLength/8];
+        random.nextBytes(keyBytes);
+        return new String(keyBytes, StandardCharsets.UTF_8);
     }
 
     public Boolean validateToken(String token, String username) {

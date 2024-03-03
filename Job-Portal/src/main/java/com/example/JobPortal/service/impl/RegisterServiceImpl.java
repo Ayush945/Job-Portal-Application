@@ -34,10 +34,12 @@ public class RegisterServiceImpl implements RegisterService {
     @Override
     public JobSeekerDTO registerAsJobSeeker(JobSeekerDTO jobSeekerDTO) {
         JobSeeker jobSeeker=modelMapper.map(jobSeekerDTO,JobSeeker.class);
+        System.out.println("Hello 1");
         if(usernameExists(jobSeeker.getUsername())){
             log.error("Username already exists",jobSeeker.getUsername());
             throw new RuntimeException("Username already exists");
         }
+        System.out.println("Hello 2");
         jobSeeker.setPassword(passwordEncoder.encode(jobSeeker.getPassword()));
         jobSeeker.setAddress(jobSeeker.getAddress());
         jobSeeker.setEmail(jobSeeker.getEmail());
