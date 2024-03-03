@@ -13,9 +13,9 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employer extends User {
+public class JobSeeker extends User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long employerId;
-    private final RoleEnum role=RoleEnum.ROLE_EMPLOYER;
+    private Long jobSeekerId;
+    private final RoleEnum role=RoleEnum.ROLE_JOB_SEEKER;
 }

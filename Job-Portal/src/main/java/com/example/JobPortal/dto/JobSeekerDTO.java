@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Builder
-public class EmployerDTO extends UserDTO {
-    private Long employerId;
-    private final RoleEnum role=RoleEnum.ROLE_EMPLOYER;
+public class JobSeekerDTO extends UserDTO {
+    private Long jobSeekerId;
+    private final RoleEnum role=RoleEnum.ROLE_JOB_SEEKER;
 }

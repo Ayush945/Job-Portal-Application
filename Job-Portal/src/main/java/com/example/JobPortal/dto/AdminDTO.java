@@ -8,9 +8,9 @@ import lombok.NoArgsConstructor;
 
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
 @Builder
-public class EmployerDTO extends UserDTO {
-    private Long employerId;
-    private final RoleEnum role=RoleEnum.ROLE_EMPLOYER;
+@Data
+public class AdminDTO extends UserDTO{
+    private Long adminId;
+    private final RoleEnum role= RoleEnum.ROLE_ADMIN;
 }
