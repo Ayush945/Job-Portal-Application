@@ -8,6 +8,11 @@ import Profile from './pages/Profile'
 import Notification from './pages/Notification'
 import Message from './pages/Message'
 import PostJob from './pages/PostJob'
+import Login from './pages/Login_and_Register_Pages/Login'
+import RegisterCompany from './pages/Login_and_Register_Pages/RegisterCompany'
+import RegisterJobSeeker from './pages/Login_and_Register_Pages/RegisterJobSeeker'
+import LoginCompany from './pages/Login_and_Register_Pages/LoginCompany'
+
 
 function App() {
   return (
@@ -22,6 +27,10 @@ function App() {
           <Route path='/notification' element={<Notification />} />
           <Route path='/message' element={<Message />} />
           <Route path='post-job' element={<PostJob />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/register-company' element={<RegisterCompany />} />
+          <Route path='/register-jobseeker' element={<RegisterJobSeeker />} />
+          <Route path='login-company' element={<LoginCompany />} />
         </Route>
       </Routes>
 
