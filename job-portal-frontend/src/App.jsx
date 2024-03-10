@@ -12,13 +12,14 @@ import Login from './pages/Login_and_Register_Pages/Login'
 import RegisterCompany from './pages/Login_and_Register_Pages/RegisterCompany'
 import RegisterJobSeeker from './pages/Login_and_Register_Pages/RegisterJobSeeker'
 import LoginCompany from './pages/Login_and_Register_Pages/LoginCompany'
+import AdminSideBar from './Components/AdminSideBar'
 
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
+        <Route path='admin-dashboard' element={<AdminSideBar />}></Route>
         <Route path='' element={<Navigation />} >
           <Route path='/' element={<Homepage />} />
           <Route path='/find-salaries' element={<FindSalaries />} />
