@@ -3,10 +3,13 @@
  * Navbar Component
  */
 import { Box, Button, Flex, Heading, Spacer, Text } from '@chakra-ui/react';
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+  const [setProfileStatus, IsSetProfileStatus] = useState(false)
+
+
   return (
     <Box
       as="nav"
@@ -27,7 +30,11 @@ function Navbar() {
       <Flex gap={4}>
         <Button variant="ghost" as={Link} to={'message'}>Message</Button>
         <Button variant="ghost" as={Link} to={'notification'}>Notification</Button>
-        <Button variant="ghost" as={Link} to={'profile'}>Profile</Button>
+        <Button
+          variant="ghost"
+          as={Link} to={setProfileStatus ? "/profile" : "/register-jobseeker"}
+        >
+          {setProfileStatus ? "Profile" : "Sign In"}</Button>
       </Flex>
       <Button variant="outline" borderWidth={3} as={Link} to={'/register-company'}>Post Job</Button>
       <style jsx>

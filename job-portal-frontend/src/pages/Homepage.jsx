@@ -18,7 +18,7 @@ function Homepage() {
                 <div className='border border-blue-200 p-1 rounded-lg bg-blue-400 hover:bg-blue-700 cursor-pointer'><button className=' text-white ml-5 mr-5'>Search</button></div>
             </div>
             <div className=' text-center mt-10 cursor-pointer'>
-                <p><Link to='post-job' className=' text-blue-400 hover:text-blue-600'>Employers: advertise a job opportunity</Link>-discover your future hire.</p>
+                <p><Link to='login-company' className=' text-blue-400 hover:text-blue-600'>Employers: advertise a job opportunity</Link>-discover your future hire.</p>
             </div>
             <div className='flex justify-evenly cursor-pointer'>
                 <div className='border shadow-md p-10 rounded-lg'>

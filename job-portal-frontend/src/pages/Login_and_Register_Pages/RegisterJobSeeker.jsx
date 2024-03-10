@@ -4,6 +4,7 @@ import registerText from './../../Images/RegisterText.png'
 import { Link } from 'react-router-dom'
 
 function RegisterJobSeeker() {
+
     return (
         <div className='flex min-h-screen bg-cyan-100'>
             <div>

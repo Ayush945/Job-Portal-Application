@@ -14,10 +14,6 @@ function LoginCompany() {
                     className=' outline-none mb-5'
                 />
                 <input
-                    placeholder='Company Phone number'
-                    className=' outline-none mb-5'
-                />
-                <input
                     placeholder='Password'
                     className='outline-none mb-5'
                 />
