@@ -1,12 +1,9 @@
-import React from 'react';
-import { HamburgerIcon } from '@chakra-ui/icons';
-import { Drawer, DrawerContent, DrawerOverlay, IconButton, useDisclosure } from '@chakra-ui/react';
-import { NavLink } from 'react-router-dom';
+import { Drawer, DrawerOverlay } from '@chakra-ui/react'
+import React from 'react'
 
-function AdminSideBar() {
+function ComapanySideBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const sidebarWidth = isOpen ? 'sm' : 'xs';
-
     return (
         <>
             <IconButton icon={<HamburgerIcon />} variant="ghost" onClick={onOpen} />
@@ -18,12 +15,19 @@ function AdminSideBar() {
 
                     <nav className=" flex flex-col space-y-2">
                         <NavLink to="/company-profile" activeClassName="active" onClick={onClose}>
-                            Admin Profile
+                            Company Profile
+                        </NavLink>
+                        <NavLink to="/post-job" activeClassName="active" onClick={onClose}>
+                            Post Job
+                        </NavLink>
+                        <NavLink to="/applications" activeClassName="active" onClick={onClose}>
+                            Applications
                         </NavLink>
                     </nav>
                 </DrawerContent>
             </Drawer>
         </>
-    );
+    )
 }
-export default AdminSideBar;
+
+export default ComapanySideBar
