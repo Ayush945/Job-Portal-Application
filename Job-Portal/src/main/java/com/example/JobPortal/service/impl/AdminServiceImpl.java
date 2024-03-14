@@ -8,7 +8,9 @@ import com.example.JobPortal.repository.AdminRepo;
 import com.example.JobPortal.service.AdminService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class AdminServiceImpl implements AdminService {
     @Autowired
     private AdminRepo adminRepo;
