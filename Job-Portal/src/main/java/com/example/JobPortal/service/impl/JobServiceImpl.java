@@ -41,6 +41,13 @@ public class JobServiceImpl implements JobService {
         ModelMapper localModelMapper=new ModelMapper();
         TypeMap<JobDTO,Job>propertyMapper=localModelMapper.createTypeMap(JobDTO.class,Job.class);
         propertyMapper.addMappings(mapper->mapper.skip(JobDTO::getJobId,Job::setJobId));
+        localModelMapper.getConfiguration().setPropertyCondition(mappingContext ->
+        {
+            if(mappingContext.getSource()==null){
+                return false;
+            }
+           return true;
+        });
         localModelMapper.map(jobDTO,existingJob);
         jobRepo.save(existingJob);
         return localModelMapper.map(existingJob,JobDTO.class);
